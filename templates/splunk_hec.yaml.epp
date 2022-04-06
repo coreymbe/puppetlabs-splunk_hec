@@ -2,7 +2,7 @@
 ---
 "url" : "<%= $splunk_hec::url %>"
 "token" : "<%= $splunk_hec::token %>"
-"facts.allowlist" :
+"facts" :
 <% $splunk_hec::collect_facts.each |$fact| {-%>
         - <%= $fact %>
 <% } -%>
