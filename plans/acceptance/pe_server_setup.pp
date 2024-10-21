@@ -30,6 +30,7 @@ plan splunk_hec::acceptance::pe_server_setup(
   )
 
   $cmd = @("CMD")
+    df -h
     echo 'puppetlabsPi3!' | puppet access login -l 1y --username admin
     puppet infrastructure tune | sed "s,\\x1B\\[[0-9;]*[a-zA-Z],,g" > /etc/puppetlabs/code/environments/production/data/common.yaml
     puppet agent -t

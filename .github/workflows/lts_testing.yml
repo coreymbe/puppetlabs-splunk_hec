@@ -39,7 +39,7 @@ jobs:
     - name: Setup Spec Test Matrix
       id: set-matrix
       run: |
-        echo "matrix={\"platforms\":[\"rhel-8\",\"rhel-9\",\"sles-15\",\"ubuntu-2204-lts\"]}" >> $GITHUB_OUTPUT
+        echo "matrix={\"platforms\":[\"rhel-8\",\"rhel-9\",\"ubuntu-2004-lts\"]}" >> $GITHUB_OUTPUT
     - name: Setup Acceptance Test Matrix
       id: build-matrix
       run: |
