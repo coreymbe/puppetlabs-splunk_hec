@@ -30,7 +30,7 @@ jobs:
     - name: Get Test Matrix
       id: get-matrix
       run: |
-        bundle exec matrix_from_metadata_v2
+        bundle exec matrix_from_metadata_v3 --output stdout | jq
     - name: Set nightly releases
       id: nightly_release
       run: |
