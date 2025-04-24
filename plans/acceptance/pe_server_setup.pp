@@ -21,11 +21,14 @@ plan splunk_hec::acceptance::pe_server_setup(
   #identify pe server node
   $puppet_server =  get_targets('*').filter |$n| { $n.vars['role'] == 'server' }
 
+  # extract pe version from matrix_from_metadata_v3 output
+  $pe_version = regsubst($version, '-puppet_enterprise', '')
+
   # install pe server
   run_plan(
     'deploy_pe::provision_master',
     $puppet_server,
-    'version' => $version,
+    'version' => $pe_version,
     'pe_settings' => $pe_settings
   )
 
