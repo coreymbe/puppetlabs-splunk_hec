@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [Unreleased](https://github.com/puppetlabs/puppetlabs-splunk_hec)
 
-[Current Diff](https://github.com/puppetlabs/puppetlabs-splunk_hec/compare/v2.0.1..main)
+[Current Diff](https://github.com/puppetlabs/puppetlabs-splunk_hec/compare/v2.0.2..main)
+
+## [2.0.2](https://github.com/puppetlabs/puppetlabs-splunk_hec/tree/v2.0.2) (2025-04-23)
+
+[Full Changelog](https://github.com/puppetlabs/puppetlabs-splunk_hec/compare/v2.0.1..v2.0.2)
+
+### Fixed
+
+-  System metrics are now formatted with the metric name as the key and the metric value as the value. [#220](https://github.com/puppetlabs/puppetlabs-splunk_hec/pull/220)
 
 ## [2.0.1](https://github.com/puppetlabs/puppetlabs-splunk_hec/tree/v2.0.1) (2024-11-26)
 
