@@ -8,10 +8,10 @@
 #   include splunk_hec::v2_cleanup
 class splunk_hec::v2_cleanup {
   file { "${settings::confdir}/splunk_hec.yaml":
-    ensure  => absent,
+    ensure => absent,
   }
 
   file { "${settings::confdir}/splunk_hec_routes.yaml":
-    ensure  => absent,
+    ensure => absent,
   }
 }

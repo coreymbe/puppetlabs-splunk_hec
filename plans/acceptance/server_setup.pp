@@ -15,7 +15,7 @@ plan splunk_hec::acceptance::server_setup(
   $localhost = get_targets('localhost')
   run_command('sleep 15', $localhost)
 
-  if $puppet_version =~ /puppet/ {
+  if $puppet_version =~ /-nightly/ {
     run_plan(
       'splunk_hec::acceptance::oss_server_setup',
       'collection' => $puppet_version
