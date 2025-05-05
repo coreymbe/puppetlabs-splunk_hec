@@ -35,6 +35,7 @@ jobs:
         --provision-exclude docker \
         --arch-exclude arm \
         --platform-exclude debian \
+        --platform-exclude redhat-7 \
         --platform-exclude redhat-8 \
         --platform-exclude sles \
         --platform-exclude ubuntu \

@@ -174,10 +174,12 @@ namespace :acceptance do
       puts "Finished running rspec tests against #{server.uri} !\n"
       if bolt_result[0]['value'].has_key?('_error')
         test_result = bolt_result[0]['value']['_error']['msg'].to_json
+        puts JSON.parse(test_result)
+        exit 1
       else
         test_result = bolt_result[0]['value']['result'].to_json
+        puts JSON.parse(test_result)
       end
-      puts JSON.parse(test_result)
     end
   end
 

@@ -61,7 +61,8 @@ class Puppet::Application::Splunk_hec < Puppet::Application
     end
   end
 
-  def upload_report(data, _sourcetype)
+  def upload_report(data, sourcetype)
+    data['sourcetype'] = sourcetype
     submit_request(data)
   end
 
