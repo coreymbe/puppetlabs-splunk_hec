@@ -61,14 +61,12 @@ describe 'Verify the minimum install' do
     it 'Verifies SSL certificate with ssl_ca configured' do
       configure_ssl
       server_agent_run(setup_manifest(ssl_ca: 'ca.pem'))
-      trigger_puppet_run(server)
       expect(log_count('Splunk HEC SSL', server_log)).to be 1
     end
 
     it 'Verifies SSL against the system store w/ include_system_cert_store set to true' do
       configure_ssl(cert_store: true)
       server_agent_run(setup_manifest(cert_store: true))
-      trigger_puppet_run(server)
       expect(log_count('system store', server_log)).to be 1
     end
   end
