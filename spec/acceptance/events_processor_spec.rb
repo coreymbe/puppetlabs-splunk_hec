@@ -16,7 +16,7 @@ describe 'Event Forwarding' do
         server.run_shell("LC_ALL=en_US.UTF-8 puppet task run facts --nodes #{host_name}")
         server.run_shell("#{EVENT_FORWARDING_CONFDIR}/collect_api_events.rb")
         after_run = Time.now.utc
-        get_splunk_report(before_run, after_run, 'puppet:jobs')
+        get_splunk_report(before_run, after_run, 'puppet:jobs', host: 'localhost')
       end
 
       it 'does not send report on first run' do
@@ -51,7 +51,7 @@ describe 'Event Forwarding' do
         server.run_shell("LC_ALL=en_US.UTF-8 puppet plan run facts targets=#{console_host_fqdn}")
         server.run_shell("#{EVENT_FORWARDING_CONFDIR}/collect_api_events.rb")
         after_run = Time.now.utc
-        get_splunk_report(before_run, after_run, 'puppet:plans')
+        get_splunk_report(before_run, after_run, 'puppet:plans', host: 'localhost')
       end
 
       it 'does not send report on first run' do
@@ -98,7 +98,7 @@ describe 'Event Forwarding' do
         server.run_shell("LC_ALL=en_US.UTF-8 puppet task run facts --nodes #{host_name}")
         server.run_shell("#{EVENT_FORWARDING_CONFDIR}/collect_api_events.rb")
         after_run = Time.now.utc
-        get_splunk_report(before_run, after_run, 'puppet:activities_console')
+        get_splunk_report(before_run, after_run, 'puppet:activities_console', host: 'localhost')
       end
 
       it 'does not send report on first run' do
